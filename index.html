@@ -3,34 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#11143a" />
-  <title>PIXEL PITSTOP — Tiny games, zero fuss</title>
+  <meta name="theme-color" content="#f6b545" />
+  <title>CATNAP ARCADE — Small games, warm company</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root{--ink:#3b241b;--cream:#fff8e8;--yellow:#f6b545;--pink:#d9654f;--cyan:#8fbd8b;--purple:#d98254;--orange:#ee8b45;--line:4px solid var(--ink);--peach:#ffd9a3}
+    body{background:var(--cream);font-family:'DM Mono',monospace;image-rendering:auto}.scanlines{display:none}
+    .site-header{background:#3b241b;color:var(--cream);box-shadow:0 4px 0 rgba(59,36,27,.12)}
+    .brand,.hero h1,.section-heading h2,.how-section h2,.card-content h3,.window-bar,.shop-balance,.art-badge,.visual-tag{font-family:'Fredoka',sans-serif;letter-spacing:.02em}
+    .brand{font-weight:700;font-size:18px;letter-spacing:.04em}.brand-mark{color:var(--yellow)}.nav-links a{color:#e7c8a7}.nav-links a.active,.nav-links a:hover{color:var(--yellow)}.status-dot{color:#b8d89c;border-color:#725040}.status-dot i{background:#b8d89c;box-shadow:none}
+    .hero{background:#d98254;min-height:560px}.hero:after{background-image:radial-gradient(rgba(255,248,232,.28) 1px,transparent 1px);background-size:22px 22px;opacity:.45}.eyebrow{font-family:'DM Mono',monospace;color:#fff0c7;letter-spacing:.08em}.hero h1{color:var(--cream);text-shadow:6px 6px 0 var(--ink);font-weight:700}.hero h1 span{color:#ffe08a}.hero-text{color:#fff4dd;line-height:1.8}.hero-note{color:#fff0d0}
+    .cta-button,.play-button{font-family:'Fredoka',sans-serif;font-weight:700;letter-spacing:.04em;background:var(--yellow);box-shadow:6px 6px 0 var(--ink)}
+    .hero-screen{background:#9ecb9a;box-shadow:11px 11px 0 var(--ink);border-radius:18px}.screen-top{background:#f7cf6b;border-radius:12px 12px 0 0}.pixel-sun{background:#ffe08a;border-radius:50%}.hero-ground{background:#d9654f}.pixel-character .head{background:#c78352;border-radius:45% 45% 38% 38%}.pixel-character .head:before{content:'';position:absolute;top:-14px;left:-3px;border-left:13px solid transparent;border-right:13px solid transparent;border-bottom:17px solid var(--ink)}.pixel-character .head:after{box-shadow:16px 0 var(--ink);background:var(--cream)}.pixel-character .body{background:#fff0c7;border-radius:12px 12px 5px 5px}.pixel-tree:before,.pixel-tree:after{background:#85ad78}.art-badge{background:var(--pink);border-radius:10px}
+    .arcade-section{background:#fff4d7}.section-heading .eyebrow,.how-section .eyebrow{color:var(--pink)}.game-count{color:#8c634e}.game-grid{gap:24px}.game-card{background:#fffaf0;border-color:var(--ink);border-radius:18px;box-shadow:7px 7px 0 var(--ink);overflow:hidden}.game-card:hover{transform:translateY(-6px) rotate(-.4deg)}.card-visual{border-bottom-color:var(--ink)}.visual-tag{background:#ffe08a;border-radius:999px;border-width:2px}.card-score{color:#fff8e8}.card-score b{color:#ffe08a}.card-content p{color:#765747;line-height:1.5}.card-number{color:var(--pink);font-family:'Fredoka',sans-serif;font-size:14px}.card-content h3{font-weight:700}
+    .battle-scene{background:linear-gradient(#e9b26f 0 58%,#9fbe79 58%)}.battle-scene .cloud{background:#fff0c7;box-shadow:12px -9px 0 #fff0c7,25px 0 0 #fff0c7}.hill{background:#769b68}.battle-player{background:#fff0c7;border-radius:12px 12px 6px 6px}.battle-player:before{background:#c78352;border-radius:45%}.crate{background:#d98254}.crate-b{background:#f6b545}
+    .runner-scene{background:linear-gradient(#df8b79 0 48%,#f6c36d 48% 70%,#4e5d55 70%)}.track{background:repeating-linear-gradient(90deg,#fff0c7 0 30px,transparent 30px 56px)}.runner-player{background:#fff0c7;border-radius:12px 12px 4px 4px}.coin-line{color:#ffe08a}.lamp:after{background:#ffe08a}
+    .flap-scene{background:#e9ad70}.flap-scene:after{background:#86aa70}.flap-cloud{background:#fff0c7;box-shadow:12px -9px 0 #fff0c7,25px 0 0 #fff0c7}.flap-pipe{background:#86aa70}.flap-bird{background:#c78352;border-radius:45%}.flap-bird:before{content:'';position:absolute;top:-12px;left:2px;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:12px solid var(--ink)}
+    .how-section{background:#f6b545;border-top-color:var(--ink)}.step>span{color:var(--pink);text-shadow:2px 2px 0 var(--ink)}.step p{line-height:1.7}footer{background:#3b241b;color:#e7c8a7}footer b{color:#f6b545}
+    .game-modal,.shop-modal{background:rgba(59,36,27,.84)}.game-window,.shop-window{border-radius:16px;overflow:hidden;background:#fff8e8;box-shadow:10px 10px 0 #2a1811}.window-bar{background:#3b241b;color:#ffe08a}.game-info,.shop-balance{background:#f6b545}.game-footer{background:#3b241b}.touch-controls{background:#f2d39b}.touch-controls button{background:#fff8e8;border-color:var(--ink)}.touch-controls button:last-child{background:var(--pink)}.shop-icon{background:#d98254}.shop-item{background:#fffaf0}.shop-buy{background:#f6b545}.shop-note,.shop-item p{color:#765747}
+  </style>
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Pixel Pitstop home">
       <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 48 48" role="img"><path d="M21 5h6v12h-6zM12 20h24v6H12zM8 26h8v7H8zM32 26h8v7h-8zM12 33h24v6H12zM21 39h6v5h-6z" fill="currentColor"/><path d="M6 13h6v6H6zM36 13h6v6h-6z" fill="#ffcf33"/></svg>
+        <svg viewBox="0 0 48 48" role="img"><path d="M7 8 18 14h12L41 8l-2 14c0 10-6 17-15 17S9 32 9 22L7 8Z" fill="currentColor"/><path d="M14 18h6v6h-6zM28 18h6v6h-6zM20 28h8v4h-8z" fill="#ffe08a"/></svg>
       </span>
-      <span>PIXEL PITSTOP</span>
+      <span>CATNAP ARCADE</span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a class="active" href="#arcade">ARCADE</a>
-      <a href="#how-to-play">HOW TO PLAY</a>
-      <button class="coin-pill" id="shop-open" type="button"><span>★</span> <b id="coin-count">0</b> COINS</button><button class="shop-link" id="shop-open-nav" type="button">SHOP</button><span class="status-dot"><i></i> ONLINE</span>
+      <a class="active" href="#arcade">GAMES</a>
+      <a href="#how-to-play">WELCOME</a>
+      <button class="coin-pill" id="shop-open" type="button"><span>★</span> <b id="coin-count">0</b> FISH</button><button class="shop-link" id="shop-open-nav" type="button">TOYS SHOP</button><span class="status-dot"><i></i> OPEN</span>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="pixel-star">✦</span> NO LOGIN. NO DOWNLOADS. JUST PLAY.</p>
-        <h1 id="hero-title">YOUR QUICK<br /><span>PIXEL BREAK</span></h1>
-        <p class="hero-text">Three tiny games for your next free moment. Pick a game, tap a key, and go for a high score.</p>
-        <a class="cta-button" href="#arcade"><span>▶</span> PICK A GAME</a>
-        <div class="hero-note"><span class="keycap mini">W</span><span class="keycap mini">A</span><span class="keycap mini">S</span><span class="keycap mini">D</span> OR ARROW KEYS <span class="plus">+</span> SPACE</div>
+        <p class="eyebrow"><span class="pixel-star">✦</span> A LITTLE PLAYTIME FOR YOU AND YOUR CAT</p>
+        <h1 id="hero-title">TAKE A<br /><span>CATNAP BREAK</span></h1>
+        <p class="hero-text">Three cozy arcade games for a quiet moment. Choose a favorite, settle in, and see how long you can keep your whiskers up.</p>
+        <a class="cta-button" href="#arcade"><span>▶</span> BROWSE GAMES</a>
+        <div class="hero-note"><span class="keycap mini">W</span><span class="keycap mini">A</span><span class="keycap mini">S</span><span class="keycap mini">D</span> OR ARROW KEYS <span class="plus">+</span> SPACE TO PLAY</div>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="coin coin-one">★</div><div class="coin coin-two">★</div>
@@ -40,39 +56,39 @@
           <div class="hero-ground"></div>
           <div class="pixel-character"><span class="head"></span><span class="body"></span><span class="leg left"></span><span class="leg right"></span></div>
           <div class="pixel-tree"><span></span></div>
-          <div class="screen-label">READY?</div>
+          <div class="screen-label">MEOWDY!</div>
         </div>
-        <div class="art-badge">INSERT<br />FUN</div>
+        <div class="art-badge">STAY<br />COZY</div>
       </div>
     </section>
 
     <section class="arcade-section" id="arcade" aria-labelledby="arcade-title">
-      <div class="section-heading"><div><p class="eyebrow">SELECT YOUR ADVENTURE</p><h2 id="arcade-title">THE ARCADE</h2></div><span class="game-count">03 GAMES AVAILABLE</span></div>
+      <div class="section-heading"><div><p class="eyebrow">THREE WAYS TO UNWIND</p><h2 id="arcade-title">THE CATNAP ARCADE</h2></div><span class="game-count">3 GAMES TO EXPLORE</span></div>
       <div class="game-grid">
         <article class="game-card card-battle">
-          <div class="card-visual"><span class="visual-tag">BATTLE</span><div class="battle-scene"><span class="cloud cloud-a"></span><span class="cloud cloud-b"></span><span class="battle-player"></span><span class="crate crate-a">+</span><span class="crate crate-b">◆</span><span class="hill"></span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
-          <div class="card-content"><div><p class="card-number">01</p><h3>PIXEL ROYALE</h3><p>Loot up. Outlast everyone.</p></div><button class="play-button" data-game="battle">PLAY <span>▶</span></button></div>
+          <div class="card-visual"><span class="visual-tag">ADVENTURE</span><div class="battle-scene"><span class="cloud cloud-a"></span><span class="cloud cloud-b"></span><span class="battle-player"></span><span class="crate crate-a">+</span><span class="crate crate-b">◆</span><span class="hill"></span></div><span class="card-score">BEST NAP <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">01</p><h3>WHISKER WARS</h3><p>Explore the garden and gather supplies.</p></div><button class="play-button" data-game="battle">PLAY <span>▶</span></button></div>
         </article>
         <article class="game-card card-runner">
-          <div class="card-visual"><span class="visual-tag">RUNNER</span><div class="runner-scene"><span class="sunset"></span><span class="track"></span><span class="runner-player"></span><span class="coin-line">★　★　★</span><span class="lamp lamp-a"></span><span class="lamp lamp-b"></span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
-          <div class="card-content"><div><p class="card-number">02</p><h3>COIN DASH</h3><p>Run fast. Grab everything.</p></div><button class="play-button" data-game="runner">PLAY <span>▶</span></button></div>
+          <div class="card-visual"><span class="visual-tag">NIGHT WALK</span><div class="runner-scene"><span class="sunset"></span><span class="track"></span><span class="runner-player"></span><span class="coin-line">★　★　★</span><span class="lamp lamp-a"></span><span class="lamp lamp-b"></span></div><span class="card-score">BEST NAP <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">02</p><h3>MOONLIGHT DASH</h3><p>Guide your cat through the evening streets.</p></div><button class="play-button" data-game="runner">PLAY <span>▶</span></button></div>
         </article>
         <article class="game-card card-flap">
-          <div class="card-visual"><span class="visual-tag">SKY HIGH</span><div class="flap-scene"><span class="flap-cloud fc-a"></span><span class="flap-cloud fc-b"></span><span class="flap-pipe fp-a"></span><span class="flap-pipe fp-b"></span><span class="flap-bird"></span><span class="flap-score">012</span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
-          <div class="card-content"><div><p class="card-number">03</p><h3>FLAPPY BYTE</h3><p>Tap to fly. Don't bonk.</p></div><button class="play-button" data-game="flappy">PLAY <span>▶</span></button></div>
+          <div class="card-visual"><span class="visual-tag">ROOFTOPS</span><div class="flap-scene"><span class="flap-cloud fc-a"></span><span class="flap-cloud fc-b"></span><span class="flap-pipe fp-a"></span><span class="flap-pipe fp-b"></span><span class="flap-bird"></span><span class="flap-score">012</span></div><span class="card-score">BEST NAP <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">03</p><h3>ROOFTOP PAWS</h3><p>Help a curious cat drift between chimneys.</p></div><button class="play-button" data-game="flappy">PLAY <span>▶</span></button></div>
         </article>
       </div>
     </section>
 
     <section class="how-section" id="how-to-play">
-      <div><p class="eyebrow">NO MANUAL REQUIRED</p><h2>HOW TO PLAY</h2></div>
-      <div class="steps"><div class="step"><span>01</span><div><b>CHOOSE A GAME</b><p>Pick your vibe from the arcade.</p></div></div><div class="step"><span>02</span><div><b>USE YOUR KEYS</b><p>WASD, arrows, or space bar.</p></div></div><div class="step"><span>03</span><div><b>BEAT YOUR SCORE</b><p>One more round is always free.</p></div></div></div>
+      <div><p class="eyebrow">A GENTLE PLACE TO BEGIN</p><h2>SETTLE IN</h2></div>
+      <div class="steps"><div class="step"><span>01</span><div><b>CHOOSE A GAME</b><p>Find a little adventure that suits your mood.</p></div></div><div class="step"><span>02</span><div><b>USE YOUR KEYS</b><p>WASD, arrow keys, or the space bar will do nicely.</p></div></div><div class="step"><span>03</span><div><b>PLAY YOUR WAY</b><p>Take another round whenever the moment feels right.</p></div></div></div>
     </section>
   </main>
-  <footer><span>PIXEL PITSTOP © 2026</span><span>MADE FOR QUICK BREAKS <b>♥</b></span><span>NO COOKIES. NO ACCOUNTS.</span></footer>
+  <footer><span>CATNAP ARCADE © 2026</span><span>MADE FOR QUIET BREAKS <b>♥</b></span><span>NO ACCOUNTS NEEDED</span></footer>
 
   <div class="shop-modal" id="shop-modal" aria-hidden="true"><div class="shop-window"><div class="window-bar"><span>PIXEL SHOP</span><button id="shop-close" aria-label="Close shop">×</button></div><div class="shop-balance"><span>YOUR WALLET</span><strong>★ <b id="shop-coins">0</b></strong></div><div class="shop-grid" id="shop-grid"></div><p class="shop-note" id="shop-note">Earn coins by playing games.</p></div></div>
-  <div class="game-modal" id="game-modal" aria-hidden="true"><div class="game-window"><div class="window-bar"><span id="modal-title">PIXEL ROYALE</span><button id="close-game" aria-label="Close game">×</button></div><div class="game-info"><span id="game-instructions">ARROWS / WASD TO MOVE · SPACE TO ACTION</span><span>SCORE <b id="game-score">00000</b></span></div><canvas id="game-canvas" width="800" height="450"></canvas><div class="touch-controls"><button data-key="ArrowLeft">◀</button><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button><button data-key="Space">●</button></div><div class="game-footer"><span id="game-status">PRESS SPACE OR TAP TO START</span><button id="restart-game">RESTART</button></div></div></div>
+  <div class="game-modal" id="game-modal" aria-hidden="true"><div class="game-window"><div class="window-bar"><span id="modal-title">WHISKER WARS</span><button id="close-game" aria-label="Close game">×</button></div><div class="game-info"><span id="game-instructions">Move with WASD or the arrow keys. Press space to interact.</span><span>SCORE <b id="game-score">00000</b></span></div><canvas id="game-canvas" width="800" height="450"></canvas><div class="touch-controls"><button data-key="ArrowLeft">◀</button><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button><button data-key="Space">●</button></div><div class="game-footer"><span id="game-status">Press space or tap the screen when you are ready.</span><button id="restart-game">PLAY AGAIN</button></div></div></div>
   <script src="script.js"></script>
 </body>
 </html>
