@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11143a" />
+  <title>PIXEL PITSTOP — Tiny games, zero fuss</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Pixel Pitstop home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img"><path d="M21 5h6v12h-6zM12 20h24v6H12zM8 26h8v7H8zM32 26h8v7h-8zM12 33h24v6H12zM21 39h6v5h-6z" fill="currentColor"/><path d="M6 13h6v6H6zM36 13h6v6h-6z" fill="#ffcf33"/></svg>
+      </span>
+      <span>PIXEL PITSTOP</span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="active" href="#arcade">ARCADE</a>
+      <a href="#how-to-play">HOW TO PLAY</a>
+      <button class="coin-pill" id="shop-open" type="button"><span>★</span> <b id="coin-count">0</b> COINS</button><button class="shop-link" id="shop-open-nav" type="button">SHOP</button><span class="status-dot"><i></i> ONLINE</span>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pixel-star">✦</span> NO LOGIN. NO DOWNLOADS. JUST PLAY.</p>
+        <h1 id="hero-title">YOUR QUICK<br /><span>PIXEL BREAK</span></h1>
+        <p class="hero-text">Three tiny games for your next free moment. Pick a game, tap a key, and go for a high score.</p>
+        <a class="cta-button" href="#arcade"><span>▶</span> PICK A GAME</a>
+        <div class="hero-note"><span class="keycap mini">W</span><span class="keycap mini">A</span><span class="keycap mini">S</span><span class="keycap mini">D</span> OR ARROW KEYS <span class="plus">+</span> SPACE</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="coin coin-one">★</div><div class="coin coin-two">★</div>
+        <div class="hero-screen">
+          <div class="screen-top"><span>PLAYER 01</span><span>HIGH SCORE: 00980</span></div>
+          <div class="pixel-sun"></div><div class="pixel-cloud cloud-one"></div><div class="pixel-cloud cloud-two"></div>
+          <div class="hero-ground"></div>
+          <div class="pixel-character"><span class="head"></span><span class="body"></span><span class="leg left"></span><span class="leg right"></span></div>
+          <div class="pixel-tree"><span></span></div>
+          <div class="screen-label">READY?</div>
+        </div>
+        <div class="art-badge">INSERT<br />FUN</div>
+      </div>
+    </section>
+
+    <section class="arcade-section" id="arcade" aria-labelledby="arcade-title">
+      <div class="section-heading"><div><p class="eyebrow">SELECT YOUR ADVENTURE</p><h2 id="arcade-title">THE ARCADE</h2></div><span class="game-count">03 GAMES AVAILABLE</span></div>
+      <div class="game-grid">
+        <article class="game-card card-battle">
+          <div class="card-visual"><span class="visual-tag">BATTLE</span><div class="battle-scene"><span class="cloud cloud-a"></span><span class="cloud cloud-b"></span><span class="battle-player"></span><span class="crate crate-a">+</span><span class="crate crate-b">◆</span><span class="hill"></span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">01</p><h3>PIXEL ROYALE</h3><p>Loot up. Outlast everyone.</p></div><button class="play-button" data-game="battle">PLAY <span>▶</span></button></div>
+        </article>
+        <article class="game-card card-runner">
+          <div class="card-visual"><span class="visual-tag">RUNNER</span><div class="runner-scene"><span class="sunset"></span><span class="track"></span><span class="runner-player"></span><span class="coin-line">★　★　★</span><span class="lamp lamp-a"></span><span class="lamp lamp-b"></span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">02</p><h3>COIN DASH</h3><p>Run fast. Grab everything.</p></div><button class="play-button" data-game="runner">PLAY <span>▶</span></button></div>
+        </article>
+        <article class="game-card card-flap">
+          <div class="card-visual"><span class="visual-tag">SKY HIGH</span><div class="flap-scene"><span class="flap-cloud fc-a"></span><span class="flap-cloud fc-b"></span><span class="flap-pipe fp-a"></span><span class="flap-pipe fp-b"></span><span class="flap-bird"></span><span class="flap-score">012</span></div><span class="card-score">LAST SCORE <b>00000</b></span></div>
+          <div class="card-content"><div><p class="card-number">03</p><h3>FLAPPY BYTE</h3><p>Tap to fly. Don't bonk.</p></div><button class="play-button" data-game="flappy">PLAY <span>▶</span></button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="how-section" id="how-to-play">
+      <div><p class="eyebrow">NO MANUAL REQUIRED</p><h2>HOW TO PLAY</h2></div>
+      <div class="steps"><div class="step"><span>01</span><div><b>CHOOSE A GAME</b><p>Pick your vibe from the arcade.</p></div></div><div class="step"><span>02</span><div><b>USE YOUR KEYS</b><p>WASD, arrows, or space bar.</p></div></div><div class="step"><span>03</span><div><b>BEAT YOUR SCORE</b><p>One more round is always free.</p></div></div></div>
+    </section>
+  </main>
+  <footer><span>PIXEL PITSTOP © 2026</span><span>MADE FOR QUICK BREAKS <b>♥</b></span><span>NO COOKIES. NO ACCOUNTS.</span></footer>
+
+  <div class="shop-modal" id="shop-modal" aria-hidden="true"><div class="shop-window"><div class="window-bar"><span>PIXEL SHOP</span><button id="shop-close" aria-label="Close shop">×</button></div><div class="shop-balance"><span>YOUR WALLET</span><strong>★ <b id="shop-coins">0</b></strong></div><div class="shop-grid" id="shop-grid"></div><p class="shop-note" id="shop-note">Earn coins by playing games.</p></div></div>
+  <div class="game-modal" id="game-modal" aria-hidden="true"><div class="game-window"><div class="window-bar"><span id="modal-title">PIXEL ROYALE</span><button id="close-game" aria-label="Close game">×</button></div><div class="game-info"><span id="game-instructions">ARROWS / WASD TO MOVE · SPACE TO ACTION</span><span>SCORE <b id="game-score">00000</b></span></div><canvas id="game-canvas" width="800" height="450"></canvas><div class="touch-controls"><button data-key="ArrowLeft">◀</button><button data-key="ArrowUp">▲</button><button data-key="ArrowDown">▼</button><button data-key="ArrowRight">▶</button><button data-key="Space">●</button></div><div class="game-footer"><span id="game-status">PRESS SPACE OR TAP TO START</span><button id="restart-game">RESTART</button></div></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
